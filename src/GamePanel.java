@@ -7,38 +7,44 @@ import java.awt.event.KeyListener;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-	
-public class GamePanel extends JPanel implements ActionListener,KeyListener{
-Timer t = new Timer(1000/60,this);
-{
+public class GamePanel extends JPanel implements ActionListener, KeyListener {
+	GameObject Obj = new GameObject();
+	Timer t = new Timer(1000 / 60, this);
 
-	
+
+	public void paintComponent(Graphics g) {
+		Obj.draw(g);
 	}
-public void paintComponent(Graphics g){
-	g.fillRect(10, 10, 100, 100);
-}
 
-public void actionPerformed(ActionEvent e) {
-	repaint();
-}
+	public void actionPerformed(ActionEvent e) {
+		repaint();
+	}
 
-@Override
-public void keyTyped(KeyEvent e) {
-	System.out.println("hi2");
-	
-}
+	@Override
+	public void keyTyped(KeyEvent e) {
+		System.out.println("Typed");
 
-@Override
-public void keyPressed(KeyEvent e) {
-	System.out.println("hi3");
-	
-}
+	}
 
-@Override
-public void keyReleased(KeyEvent e) {
-	System.out.println("hi4");
-	
-}  
-	
-}
+	@Override
+	public void keyPressed(KeyEvent e) {
+		System.out.println("Pressed");
 
+	}
+	public void keyPressed1(KeyEvent a) {
+		Obj.x--;
+
+	}
+	public void keyPressed11(KeyEvent d) {
+		Obj.x++;
+
+	}
+
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		System.out.println("Released");
+
+	}
+
+}

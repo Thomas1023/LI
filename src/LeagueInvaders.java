@@ -3,8 +3,6 @@ import java.awt.event.KeyListener;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import leagueInvaders.GamePanel;
-
 public class LeagueInvaders {
 	JFrame gf = new JFrame();
 	GamePanel g = new GamePanel();
@@ -21,6 +19,7 @@ public class LeagueInvaders {
 		gf.setSize(500, 800);
 		gf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		gf.addKeyListener(g);
+		gf.add(g);
 		
 	}
 
