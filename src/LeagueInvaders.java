@@ -1,30 +1,34 @@
-import java.awt.event.KeyListener;
-
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 
 public class LeagueInvaders {
-	JFrame gf = new JFrame();
-	GamePanel g = new GamePanel();
+
+	JFrame frame;
+
+	static final int WIDTH = 500;
+	static final int LENGTH = 800;
+
+	GamePanel GP;
+
+	LeagueInvaders() {
+
+		frame = new JFrame();
+
+		GP = new GamePanel();
+
+		setup();
+	}
 
 	public static void main(String[] args) {
-		LeagueInvaders LeagueInvaders = new LeagueInvaders();
-
-		LeagueInvaders.setup();
-
+		LeagueInvaders LI = new LeagueInvaders();
 	}
 
-	public void setup() {
-		gf.setVisible(true);
-		gf.setSize(500, 800);
-		gf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		gf.addKeyListener(g);
-		gf.add(g);
-		
+	void setup() {
+		frame.add(GP);
+		frame.setSize(WIDTH, LENGTH);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+		frame.addKeyListener(GP);
+
+		GP.startGame();
 	}
-
-	public LeagueInvaders() {
-
-	}
-
 }
